@@ -9,7 +9,7 @@ repositories {
 dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter-engine:5.9.2",
-            "com.codeborne:selenide:7.9.4"
+            "com.codeborne:selenide:7.11.0"
     )
 }
 

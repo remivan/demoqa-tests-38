@@ -3,8 +3,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -46,17 +44,17 @@ public class DemoqaTests {
 
         $("#hobbiesWrapper").$(byText("Music")).click();
 
-        $("#uploadPicture").uploadFile(new File("src/test/1.jpg"));
+        $("#uploadPicture").uploadFromClasspath("1.jpg");
 
         $(byText("Submit")).scrollTo();
 
         $("#currentAddress").setValue("Street 1, house 1");
 
         $("#state").click();
-        $(".css-26l3qy-menu").$(byText("Haryana")).click();
+        $("#react-select-3-input").setValue("Haryana").pressEnter();
 
         $("#city").click();
-        $(".css-26l3qy-menu").$(byText("Karnal")).click();
+        $("#react-select-4-input").setValue("Karnal").pressEnter();
 
         $("#submit").click();
 
