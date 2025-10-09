@@ -18,11 +18,13 @@ public class DemoqaTests {
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.pageLoadStrategy = "eager";
     }
 
 
     @Test
     void fillFormTest()  {
+
         open("/automation-practice-form");
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
@@ -46,11 +48,9 @@ public class DemoqaTests {
 
         $("#uploadPicture").uploadFromClasspath("1.jpg");
 
-        $(byText("Submit")).scrollTo();
-
         $("#currentAddress").setValue("Street 1, house 1");
 
-        $("#state").click();
+        $("#state").scrollTo().click();
         $("#react-select-3-input").setValue("Haryana").pressEnter();
 
         $("#city").click();
