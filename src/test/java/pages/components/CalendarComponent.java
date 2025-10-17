@@ -10,7 +10,7 @@ public class CalendarComponent {
         $(".react-datepicker__month-select").selectOption(month);
         $(".react-datepicker__year-select").click();
         $(".react-datepicker__year-select").selectOption(year);
-        $(".react-datepicker__week").$(byText(day)).click();
+        $(".react-datepicker__month").$(byText(day)).click();
 
     }
 }

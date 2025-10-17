@@ -15,8 +15,7 @@ public class RegistrationPage {
             genderWrapper = $("#genterWrapper"),
             userNumber = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
-            subjectsInput = $("#subjectsInput"),
-            subjectMenu = $(".subjects-auto-complete__menu"),
+            subjectMenu = $("#subjectsInput"),
             hobbiesCheckbox = $("#hobbiesWrapper"),
             uploadPicture = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
@@ -72,9 +71,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubjectsInput(String value, String itemMenu) {
-        subjectsInput.setValue(value);
-        subjectMenu.$(byText(itemMenu)).click();
+    public RegistrationPage setSubjectsInput(String value) {
+        subjectMenu.setValue(value).pressEnter();
 
         return this;
     }

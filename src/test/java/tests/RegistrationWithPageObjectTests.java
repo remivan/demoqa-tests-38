@@ -2,13 +2,13 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+import pages.components.ModalComponent;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 
 
 public class RegistrationWithPageObjectTests extends TestBase{
         RegistrationPage registrationPage = new RegistrationPage();
+        ModalComponent modalComponent = new ModalComponent();
 
     @Test
     void fillFormTest()  {
@@ -20,7 +20,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .setGenderWrapper("Male")
                 .setUserNumber("89031234567")
                 .setDateOfBirth("1", "December", "2000")
-                .setSubjectsInput("a", "Arts")
+                .setSubjectsInput("Arts")
                 .setHobbies("Music")
                 .setPicture("1.jpg")
                 .setAddress("Street 1, house 1")
@@ -30,7 +30,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
 
 
-        registrationPage.checkResult("Student Name", "Ivan Ivanov")
+        modalComponent.checkResult("Student Name", "Ivan Ivanov")
                 .checkResult("Student Email", "ivanov1900@gmail.com")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "8903123456")
@@ -53,7 +53,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .setFormSumbit();
 
 
-        registrationPage.checkResult("Student Name", "Ivan Ivanov")
+        modalComponent.checkResult("Student Name", "Ivan Ivanov")
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "8903123456");
 
@@ -68,7 +68,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .setLastName("Ivanov")
                 .setFormSumbit();
 
-        registrationPage.checkResult("Student Name", "Ivan Ivanov");
+        modalComponent.checkResult("Student Name", "Ivan Ivanov");
 
     }
 
