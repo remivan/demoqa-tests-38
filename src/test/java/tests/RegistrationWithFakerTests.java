@@ -12,7 +12,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
     ModalComponent modalComponent = new ModalComponent();
-    TestData randomUtils = new TestData();
+    TestData testData = new TestData();
 
 
     @Test
@@ -20,32 +20,32 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
         registrationPage.openPage()
-                .setFirstName(randomUtils.firstName)
-                .setLastName(randomUtils.lastName)
-                .setUserEmail(randomUtils.email)
-                .setGenderWrapper(randomUtils.gender)
-                .setUserNumber(randomUtils.phone)
-                .setDateOfBirth(randomUtils.day, randomUtils.month, randomUtils.year)
-                .setSubjectsInput(randomUtils.subjects)
-                .setHobbies(randomUtils.hobbie)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setUserEmail(testData.email)
+                .setGenderWrapper(testData.gender)
+                .setUserNumber(testData.phone)
+                .setDateOfBirth(testData.day, testData.month, testData.year)
+                .setSubjectsInput(testData.subjects)
+                .setHobbies(testData.hobbie)
                 .setPicture("1.jpg")
-                .setAddress(randomUtils.streetAddress)
-                .setState(randomUtils.state)
-                .setCity(randomUtils.city)
+                .setAddress(testData.streetAddress)
+                .setState(testData.state)
+                .setCity(testData.city)
                 .setFormSumbit();
 
 
 
-        modalComponent.checkResult("Student Name", randomUtils.firstName + " " + randomUtils.lastName)
-                .checkResult("Student Email", randomUtils.email)
-                .checkResult("Gender", randomUtils.gender)
-                .checkResult("Mobile", randomUtils.phone)
-                .checkResult("Date of Birth", randomUtils.day + " " + randomUtils.month + "," + randomUtils.year)
-                .checkResult("Subjects", randomUtils.subjects)
-                .checkResult("Hobbies", randomUtils.hobbie)
+        modalComponent.checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Student Email", testData.email)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.phone)
+                .checkResult("Date of Birth", testData.day + " " + testData.month + "," + testData.year)
+                .checkResult("Subjects", testData.subjects)
+                .checkResult("Hobbies", testData.hobbie)
                 .checkResult("Picture", "1.jpg")
-                .checkResult("Address", randomUtils.streetAddress)
-                .checkResult("State and City", randomUtils.state + " " + randomUtils.city);
+                .checkResult("Address", testData.streetAddress)
+                .checkResult("State and City", testData.state + " " + testData.city);
 
     }
 
@@ -54,16 +54,16 @@ public class RegistrationWithFakerTests extends TestBase{
     void minimalFormTest()  {
 
         registrationPage.openPage()
-                .setFirstName(randomUtils.firstName)
-                .setLastName(randomUtils.lastName)
-                .setGenderWrapper(randomUtils.gender)
-                .setUserNumber(randomUtils.phone)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGenderWrapper(testData.gender)
+                .setUserNumber(testData.phone)
                 .setFormSumbit();
 
 
-        modalComponent.checkResult("Student Name", randomUtils.firstName + " " + randomUtils.lastName)
-                .checkResult("Gender", randomUtils.gender)
-                .checkResult("Mobile", randomUtils.phone);
+        modalComponent.checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.phone);
 
     }
 
@@ -72,11 +72,11 @@ public class RegistrationWithFakerTests extends TestBase{
     void negativeFormTest()  {
 
         registrationPage.openPage()
-                .setFirstName(randomUtils.firstName)
-                .setLastName(randomUtils.lastName)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
                 .setFormSumbit();
 
-        modalComponent.checkResult("Student Name", randomUtils.firstName + " " + randomUtils.lastName);
+        modalComponent.checkResult("Student Name", testData.firstName + " " + testData.lastName);
 
     }
 
