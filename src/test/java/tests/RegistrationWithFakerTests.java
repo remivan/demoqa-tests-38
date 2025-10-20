@@ -4,7 +4,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.ModalComponent;
-import utils.RandomUtils;
+import data.TestData;
 
 
 
@@ -12,7 +12,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
     ModalComponent modalComponent = new ModalComponent();
-    RandomUtils randomUtils = new RandomUtils();
+    TestData randomUtils = new TestData();
 
 
     @Test

@@ -1,11 +1,11 @@
-package utils;
+package data;
 
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
 
 
-public class RandomUtils {
+public class TestData {
 
     Faker faker = new Faker(new Locale("it"));
 
@@ -17,7 +17,7 @@ public class RandomUtils {
     public String hobbie = faker.options().option("Sports", "Reading", "Music");
     public String subjects = faker.options().option("Arts", "Maths", "Accounting", "Social Studies");
     public String phone = faker.phoneNumber().subscriberNumber(10);
-    public String day = String.format("%s", faker.number().numberBetween(10, 28));
+    public String day = String.format("%s", faker.number().numberBetween(1, 28));
     public String month= faker.options().option("January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December");
     public String year = String.format("%s", faker.number().numberBetween(1950, 2025));
