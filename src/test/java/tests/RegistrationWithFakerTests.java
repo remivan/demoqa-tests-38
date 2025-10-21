@@ -20,6 +20,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setUserEmail(testData.email)
@@ -54,6 +55,7 @@ public class RegistrationWithFakerTests extends TestBase{
     void minimalFormTest()  {
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGenderWrapper(testData.gender)
@@ -72,6 +74,7 @@ public class RegistrationWithFakerTests extends TestBase{
     void negativeFormTest()  {
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setFormSumbit();

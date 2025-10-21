@@ -4,8 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
 
@@ -110,6 +109,13 @@ public class RegistrationPage {
     }
     public RegistrationPage setFormSumbit() {
         formSubmit.scrollTo().click();
+
+        return this;
+    }
+
+    public RegistrationPage removeBanner(){
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
 
         return this;
     }
