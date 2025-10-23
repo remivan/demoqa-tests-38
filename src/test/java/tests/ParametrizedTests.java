@@ -77,7 +77,7 @@ public class ParametrizedTests {
         );
     }
     @MethodSource
-    @ParameterizedTest(name = "В списке должны быть подкатегории, соответсвующие выбранной категории")
+    @ParameterizedTest(name = "В списке должны быть подкатегории, соответствующие выбранной категории")
     @Tag("Medium")
     void checkCategory(String category, List<String> subCategory)  {
 
