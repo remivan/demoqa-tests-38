@@ -57,7 +57,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
     @Test
     void minimalFormTest()  {
-
+        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
                 .removeBanner()
                 .setFirstName(testData.firstName)
@@ -76,7 +76,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
     @Test
     void negativeFormTest()  {
-
+        SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
                 .removeBanner()
                 .setFirstName(testData.firstName)
