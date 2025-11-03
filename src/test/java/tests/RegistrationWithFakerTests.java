@@ -77,7 +77,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
     @Test
-
+    @Tag("demoqa")
     void negativeFormTest()  {
         SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
