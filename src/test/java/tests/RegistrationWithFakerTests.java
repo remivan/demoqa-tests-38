@@ -20,7 +20,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
     @Test
-    @Tag("demoqa")
+
     void fillFormTest()  {
 
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -57,7 +57,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
     @Test
-    @Tag("demoqa")
+
     void minimalFormTest()  {
         SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
@@ -77,7 +77,7 @@ public class RegistrationWithFakerTests extends TestBase{
 
 
     @Test
-    @Tag("demoqa")
+
     void negativeFormTest()  {
         SelenideLogger.addListener("allure", new AllureSelenide());
         registrationPage.openPage()
