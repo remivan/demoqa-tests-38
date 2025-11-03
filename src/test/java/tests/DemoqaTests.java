@@ -24,7 +24,6 @@ public class DemoqaTests {
     }
 
 
-    @Tag("demoqa")
     @Test
     void fillFormTest()  {
 
