@@ -13,7 +13,7 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void setupEnvironment() {
-//
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
